@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        int[] collectionOfNumbers = { 8, 3, 9, 1, 7, 5};
+        var secondMin = Exercises.SecondSmallest(collectionOfNumbers);
+        Console.WriteLine(secondMin);
     }
 }
 
@@ -17,4 +20,5 @@ Generics
 params
 IList<T>
 Multidimensional arrays
+Jagged arrays (irregular matrices)
 */

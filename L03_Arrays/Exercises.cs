@@ -15,14 +15,48 @@ namespace L03_Arrays;
 */
 static class Exercises
 {
+    /// <summary>
+    /// Gets the largest number in the specified array.
+    /// Assume that the array has at least one item
+    /// </summary>
     public static int Maximum(int[] numbers)
     {
-        return default;
-    }
+        var max = numbers[0];
+        
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            if (numbers[i] > max)
+                max = numbers[i];
+        }
 
+        return max;
+    }
+    
+    /// <summary>
+    /// Gets the seconds largest number in the
+    /// specified array.
+    /// Assume that the array has at least two items
+    /// </summary>
     public static int SecondLargest(int[] numbers)
     {
-        return default;
+        var max1 = Math.Min(numbers[0], numbers[1]);
+        var max2 = Math.Max(numbers[0], numbers[1]);
+
+        for (int i = 2; i < numbers.Length; i++)
+        {
+            var newNumber = numbers[i];
+            if (newNumber > max1)
+            {
+                max2 = max1;
+                max1 = newNumber;
+            }
+            else if (newNumber > max2)
+            {
+                max2 = newNumber;
+            }
+        }
+
+        return max2;
     }
 
     public static int Minimum(int[] numbers)
@@ -32,7 +66,24 @@ static class Exercises
     
     public static int SecondSmallest(int[] numbers)
     {
-        return default;
+        var min1 = Math.Min(numbers[0], numbers[1]);
+        var min2 = Math.Max(numbers[0], numbers[1]);
+
+        for (int i = 2; i < numbers.Length; i++)
+        {
+            var newNumber = numbers[i];
+            if (newNumber < min1)
+            {
+                min2 = min1;
+                min1 = newNumber;
+            }
+            else if (newNumber < min2)
+            {
+                min2 = newNumber;
+            }
+        }
+
+        return min2;
     }
     
     /// <summary>
@@ -46,7 +97,11 @@ static class Exercises
     /// </example>
     public static bool Contains(int[] numbers, int number)
     {
-        return default;
+        for (int i = 0; i < numbers.Length; i++)
+            if (numbers[i] == number)
+                return true;
+        
+        return false;
     }
     
     /// <summary>
@@ -54,7 +109,12 @@ static class Exercises
     /// </summary>
     public static double Average(double[] numbers)
     {
-        return default;
+        var sum = 0.0;
+        
+        for (int i = 0; i < numbers.Length; i++)
+            sum += numbers[i];
+        
+        return sum / numbers.Length;
     }
     
     /// <summary>
@@ -66,9 +126,16 @@ static class Exercises
     /// CountGreaterThanAverage({1,2,3,4,5}) = 1
     /// CountGreaterThanAverage({2,10,5,8,17}) = 2
     /// </example>
-    public static int CountGreaterThanAverage(int[] numbers)
+    public static int CountGreaterThanAverage(double[] numbers)
     {
-        return default;
+        var count = 0;
+        var average = Average(numbers);
+        
+        for (int i = 0; i < numbers.Length; i++)
+            if (numbers[i] > average)
+                count++;
+        
+        return count;
     }
     
     /// <summary>
@@ -82,7 +149,9 @@ static class Exercises
     /// </example>
     public static void Swap<T>(T[] items, int i, int j)
     {
-        
+        var temp = items[i];
+        items[i] = items[j];
+        items[j] = temp;
     }
     
     /// <summary>
@@ -94,7 +163,12 @@ static class Exercises
     /// </example>
     public static T[] Clone<T>(T[] items)
     {
-        return default;
+        var clonedArray = new T[items.Length];
+        
+        for (int i = 0; i < items.Length; i++)
+            clonedArray[i] = items[i];
+        
+        return clonedArray;
     }
     
     /// <summary>
@@ -102,11 +176,16 @@ static class Exercises
     /// array, but in reversed order
     /// </summary>
     /// <example>
-    /// SortAscending({1,2,3,4,5}) = {5,4,3,2,1}
+    /// Reverse({1,2,3,4,5}) = {5,4,3,2,1}
     /// </example>
     public static T[] Reverse<T>(T[] items)
     {
-        return default;
+        var reversedArray = new T[items.Length];
+
+        for (int i = items.Length - 1; i >= 0; i--)
+            reversedArray[i] = items[i];
+        
+        return reversedArray;
     }
     
     /// <summary>

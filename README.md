@@ -27,6 +27,10 @@
 
 ### params
 
-### IList&lt;T&gt;
-
 ### Flerdimensionella arrayer
+
+## Resources
+
+- https://learn.microsoft.com/en-us/shows/csharp-fundamentals-for-absolute-beginners/
+
+- https://www.tutorialsteacher.com/csharp/
