@@ -1,9 +1,5 @@
 ﻿
-// read two numbers from the user
-// print the maximum
-
-using System.Threading.Channels;
-
+// read two numbers from the user. Print the maximum of them
 void RunMaxOfTwoNumbers()
 {
     var n1 = int.Parse(Console.ReadLine());
@@ -14,8 +10,7 @@ void RunMaxOfTwoNumbers()
         Console.WriteLine(n2);
 }
 
-// read three numbers from the user
-// print the maximum
+// read three numbers from the user. Print the maximum of them
 void RunMaxOfThreeNumbers()
 {
     var n1 = int.Parse(Console.ReadLine());
@@ -75,7 +70,7 @@ void RunSortThreeNumbers()
     }
 }
 
-
+// Print the numbers from 1 to 10, one per line
 void RunPrintFromOneToTen()
 {
     for (int i = 1; i <= 10; i++)
@@ -84,6 +79,7 @@ void RunPrintFromOneToTen()
     }
 }
 
+// Ask the user to input 5 numbers. One at a time. Print the sum of them
 void RunPrintSumOf5Numbers()
 {
     var sum = 0;
@@ -160,19 +156,35 @@ void RunMultiplicationTable()
     }
 }
 
+// In order to define a function:
+// <return_type> <function_name> ( <param1_type> <param1_name>, <param2_type> <param2_name>, ... )
+// {
+//     // Function body
+//     return value; // value must be of type <return_type>
+// }
 int Sum(int x, int y)
 {
     return x + y;
 }
+
+// x and y are called "formal parameters"
 int Max(int x, int y)
 {
-    var foo = 1;
-    return x > y ? x : y;
+    var isXTheGreatest = x > y;     // isXTheGreatest is a "local variable" and can only be used
+                                    // within the scope of the function Max
+    return isXTheGreatest ? x : y;
 }
+// when a formal parameter is assigned (bound) in a function call, then it is called "argument". E.g in
+// Max(2, 5);
+// 2 is the first argument and 5 is the second.
+// The expression Max(2, 5) is called "function call"
+
 int Square(int x)
 {
     return x * x;
 }
+
+
 bool IsEven(int x)
 {
     return x % 2 == 0;
