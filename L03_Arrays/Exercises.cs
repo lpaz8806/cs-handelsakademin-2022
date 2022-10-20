@@ -182,8 +182,8 @@ static class Exercises
     {
         var reversedArray = new T[items.Length];
 
-        for (int i = items.Length - 1; i >= 0; i--)
-            reversedArray[i] = items[i];
+        for (int i = 0; i < items.Length; i++)
+            reversedArray[i] = items[items.Length - i - 1];
         
         return reversedArray;
     }
