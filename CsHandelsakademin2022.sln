@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repetition1020", "Repetitio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgsharpSolutions", "ProgsharpSolutions\ProgsharpSolutions.csproj", "{4563BA15-A3FB-499D-A505-B789D53EC8B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04_Recursion", "L04_Recursion\L04_Recursion.csproj", "{D202D039-3E47-45CC-9276-F81CC12D64DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Handledning", "Handledning", "{559F01C0-9B1F-409A-8A3F-E1D1509D2213}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,12 @@ Global
 		{4563BA15-A3FB-499D-A505-B789D53EC8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4563BA15-A3FB-499D-A505-B789D53EC8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4563BA15-A3FB-499D-A505-B789D53EC8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D202D039-3E47-45CC-9276-F81CC12D64DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D202D039-3E47-45CC-9276-F81CC12D64DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D202D039-3E47-45CC-9276-F81CC12D64DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D202D039-3E47-45CC-9276-F81CC12D64DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D921555A-D9EB-4C77-9A4F-6F01C21AD494} = {559F01C0-9B1F-409A-8A3F-E1D1509D2213}
 	EndGlobalSection
 EndGlobal
