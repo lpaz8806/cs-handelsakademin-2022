@@ -57,7 +57,7 @@ public class Exercises
     /// <remarks>
     /// The operations * and / are not allowed.
     /// </remarks>
-    static uint Div(uint x, uint y)
+    public static uint Div(uint x, uint y)
     {
         return default;
     }
@@ -69,11 +69,26 @@ public class Exercises
     /// <remarks>
     /// The operations *, / and % are not allowed.
     /// </remarks>
-    static uint Mod(uint x, uint y)
+    public static uint Mod(uint x, uint y)
     {
         return default;
     }
 
+    /// <summary>Computes the opposite of x</summary>
+    /// <remarks>
+    /// The operations + and - only be used if one of the operands is 1.
+    /// No other arithmetic operation or mathematical function is allowed
+    /// </remarks>
+    /// <example>
+    /// Neg(0) = 0
+    /// Neg(-5) = 5
+    /// Neg(8) = -8
+    /// </example>
+    public static int Neg(int x)
+    {
+        return 0;
+    }
+    
     /// <summary>
     /// Computes x to the power of y.
     /// Assume that x and y are not 0 at the same time.
@@ -81,7 +96,41 @@ public class Exercises
     /// if x is 0 then y is not 0.
     /// if y is 0 then x is not 0.
     /// </summary>
-    static uint Pow(uint x, uint y)
+    public static uint Pow(uint x, uint y)
+    {
+        return 0;
+    }
+    
+    /// <summary>
+    /// Computes the sum of the digits of the specified
+    /// non-negative number.
+    ///
+    /// Hint: Given a number, how to compute its least significant
+    /// digit? (the right-most digit)
+    /// </summary>
+    /// <example>
+    /// DigitsSum(1) = 1
+    /// DigitsSum(12) = 3
+    /// DigitsSum(135) = 9
+    /// DigitsSum(2022) = 6
+    /// </example>
+    public static int DigitsSum(int n)
+    {
+        return 0;
+    }
+    
+    /// <summary>
+    /// Counts the number of occurrences of the digit d in n.
+    /// Assume n >= 0 and d between 0 and 9
+    /// </summary>
+    /// <example>
+    /// CountDigit(0, 0) = 1
+    /// CountDigit(10, 0) = 1
+    /// CountDigit(1, 1) = 1
+    /// CountDigit(1233, 3) = 2
+    /// CountDigit(11325345, 8) = 0
+    /// </example>
+    public static int CountDigit(int n, int d)
     {
         return 0;
     }
@@ -90,8 +139,17 @@ public class Exercises
 
     #region Divide and Conquer
 
+    /// <summary>
+    /// Computes x to the power of y.
+    /// Assume that x and y are not 0 at the same time.
+    /// 
+    /// Use the divide and conquer approach to reduce the
+    /// amount of multiplications 
+    /// </summary>
+    public static uint FastPow(uint x, uint y)
+    {
+        return 0;
+    }
     
-    
-
     #endregion
 }
