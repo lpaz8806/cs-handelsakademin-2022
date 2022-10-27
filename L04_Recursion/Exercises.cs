@@ -2,7 +2,7 @@ namespace L04_Recursion;
 
 public class Exercises
 {
-    #region Tail recursion
+    #region Tail recursion and some others not-tail
 
     /// <summary>
     /// Computes the sum of x and y.
@@ -134,7 +134,27 @@ public class Exercises
     {
         return 0;
     }
-    
+    /// <summary>
+    /// Counts the number of 1s (ones) in the binary number n
+    /// </summary>
+    public static int CountOnes(int n)
+    {
+        return 0;
+    }
+
+
+    /// <summary>
+    /// Computes the Fibonacci sequence up the n-th term
+    /// </summary>
+    /// <example>
+    /// FSeq(3) = {1,1,2,3}
+    /// FSeq(6) = {1,1,2,3,5,8,13}
+    /// </example>
+    public static ulong[] FibonacciSequence(uint n)
+    {
+        return default;
+    }
+
     #endregion
 
     #region Divide and Conquer
@@ -149,6 +169,73 @@ public class Exercises
     public static uint FastPow(uint x, uint y)
     {
         return 0;
+    }
+
+    /// <summary>
+    /// Merges (blandar) the specified SORTED arrays and
+    /// returns another sorted array 
+    /// </summary>
+    /// <example>
+    /// MergeSortedArrays({1,2}, {3,4,5}) => {1,2,3,4,5}
+    /// MergeSortedArrays({3,4,5}, {1,2}) => {1,2,3,4,5} 
+    /// MergeSortedArrays({1,3,5}, {2,7,9,11}) => {1,2,3,5,7,9,11} 
+    /// </example>
+    public static int[] MergeSortedArrays(int[] arr1, int[] arr2)
+    {
+        return default;
+    }
+
+    /// <summary>
+    /// Sorts the specified array
+    /// </summary>
+    public static void SortArray(int[] arr)
+    {
+        
+    }
+    
+    #endregion
+
+    #region Cool section
+    
+    /// <summary>
+    /// Determines whether the specified number is a Wirth number.
+    /// 
+    /// Definition:
+    /// - 1 is Wirth
+    /// - if k (int) is Wirth then
+    ///   2 * k + 1 is Wirth and
+    ///   3 * k + 1 is Wirth
+    /// </summary>
+    /// <example>
+    /// 1, 3, 4, 7, 9, 10, 13 ... are Wirth
+    /// </example>
+    /// <returns>true if n is a Wirth number, false otherwise</returns>
+    public static bool IsWirth(int n)
+    {
+        return default;
+    }
+    
+    /// <summary>
+    /// Computes the area of the largest island in the map
+    /// </summary>
+    /// /// <example>
+    /// 0 1 0 1
+    /// 1 1 0 1     =>  3
+    /// 0 0 0 0
+    ///
+    /// 0 0 0 1
+    /// 1 0 0 1     =>  4
+    /// 0 0 1 1
+    ///
+    /// 1 0 0 0
+    /// 0 1 0 0     =>  3
+    /// 0 0 1 0
+    /// </example>
+    /// <param name="map"></param>
+    /// <returns>The area of the largest island in the map</returns>
+    public static int ComputeAreaOfLargestIsland(bool[,] map)
+    {
+        return default;
     }
     
     #endregion

@@ -121,7 +121,7 @@ THE END
 
 #endregion
 
-#region Excercise
+#region Exercise
 
 /*
 Suppose that there is a pile of sixteen coins on a table,
@@ -145,4 +145,19 @@ set of N coins?
 
 #endregion
 
-Examples.CountDown(3);
+
+
+bool[,] map =
+{
+    { true, false, false, true },
+    { true, false, false, false },
+    { false, true, false, false },
+    { false, false, false, false },
+    { true, false, false, false },
+    { false, false, false, false },
+    { false, false, true, true },
+    { false, false, false, false },
+    { true, true, true, true }
+};
+var count = Examples.CountIslands(map);
+Console.WriteLine(count);
