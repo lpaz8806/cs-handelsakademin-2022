@@ -173,7 +173,9 @@ public class Exercises
 
     /// <summary>
     /// Merges (blandar) the specified SORTED arrays and
-    /// returns another sorted array 
+    /// returns another sorted array.
+    ///
+    /// This problem can be solved iteratively (using loops)
     /// </summary>
     /// <example>
     /// MergeSortedArrays({1,2}, {3,4,5}) => {1,2,3,4,5}

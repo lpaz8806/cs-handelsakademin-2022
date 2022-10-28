@@ -145,8 +145,6 @@ set of N coins?
 
 #endregion
 
-
-
 bool[,] map =
 {
     { true, false, false, true },
