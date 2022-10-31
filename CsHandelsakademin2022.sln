@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04_Recursion", "L04_Recurs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Handledning", "Handledning", "{559F01C0-9B1F-409A-8A3F-E1D1509D2213}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L05_Classes", "L05_Classes\L05_Classes.csproj", "{8F8E4526-29E9-45F0-BB6B-EEBC44DB5BE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repetition", "Repetition", "{6756DB07-DF9A-4887-A0C3-2E71ACEFB08C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,8 +54,13 @@ Global
 		{D202D039-3E47-45CC-9276-F81CC12D64DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D202D039-3E47-45CC-9276-F81CC12D64DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D202D039-3E47-45CC-9276-F81CC12D64DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8E4526-29E9-45F0-BB6B-EEBC44DB5BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8E4526-29E9-45F0-BB6B-EEBC44DB5BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8E4526-29E9-45F0-BB6B-EEBC44DB5BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8E4526-29E9-45F0-BB6B-EEBC44DB5BE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D921555A-D9EB-4C77-9A4F-6F01C21AD494} = {559F01C0-9B1F-409A-8A3F-E1D1509D2213}
+		{A2DB6B7E-D96C-4CD4-A673-4E6AE0E7BA4F} = {6756DB07-DF9A-4887-A0C3-2E71ACEFB08C}
 	EndGlobalSection
 EndGlobal

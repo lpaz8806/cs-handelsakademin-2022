@@ -1,6 +1,6 @@
 namespace ProgsharpSolutions;
 
-public class Kapitel4
+static class Kapitel4
 {
     /// <summary>
     /// Skapa ett program som beräknar siffersumman av ett
