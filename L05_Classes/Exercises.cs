@@ -3,8 +3,9 @@ namespace L05_Classes;
 #region Design
 
 // 01. Specify all the services (methods) you think a class Chronometer should have
-
+// Start, Stop, ElapsedTime
 // 02. Specify all the services (methods) you think a class PhoneBook should have
+// Search, Add, Edit, Delete
 
 // 03. Specify all the services (methods) you think a class BankAccount should have
 
