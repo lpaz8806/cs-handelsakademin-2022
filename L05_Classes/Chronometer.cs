@@ -39,5 +39,3 @@ public class Chronometer
         }
     }
 }
-
-// https://zoom.us/j/8804372030
