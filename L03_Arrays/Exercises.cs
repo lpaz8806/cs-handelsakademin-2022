@@ -202,7 +202,12 @@ static class Exercises
     /// </example>
     public static T[] Slice<T>(T[] items, int startIndex, int length)
     {
-        return default;
+        T[] slice = new T[length];
+        
+        for (int i = 0; i < slice.Length; i++)
+            slice[i] = items[startIndex + i];
+        
+        return slice;
     }
     
     /// <summary>
