@@ -6,6 +6,9 @@ public abstract class CompoundCircuit : Circuit
 
     protected CompoundCircuit(Circuit[] circuits)
     {
+        if (circuits.Length < 2)
+            throw new ArgumentException("Compound circuits must have at least two circuits");
+        
         Circuits = circuits;
     }
 }

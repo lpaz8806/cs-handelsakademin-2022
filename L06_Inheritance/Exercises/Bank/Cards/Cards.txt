@@ -1,0 +1,7 @@
+Like the BankAccount hierarchy, design and implement a Card hierarchy.
+Notice that a Card must have an associated BankAccount.
+
+Think about the properties a card has. E.G
+- number: XXXX-XXXX-XXXX-XXXX
+- pin: XXXX
+etc

@@ -1,0 +1,11 @@
+1. Design a hierarchy allowing the evaluation of arithmetic expressions
+(addition, subtraction, multiplication and division). Use the decimal
+type to represent numbers. Notice that expressions are formed by
+operands and operators. There is not limit of the amount of operations
+that can be represented.
+2 + 4 * 2 - 8 * (3 - 4 / 2)
+
+[Hint: You might find some inspiration in the circuits hierarchy]
+
+2. Add to the hierarchy support for square root.
+

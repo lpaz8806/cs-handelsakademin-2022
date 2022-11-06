@@ -1,0 +1,5 @@
+Implement a class Library allowing to manage loans and returns of Books.
+A Book can be printed or digital. The loan of a printed book is limited by
+existence in shelves, whereas digital books have no limits.
+
+Design a Book hierarchy allowing to abstract the kind of book you're dealing with.
