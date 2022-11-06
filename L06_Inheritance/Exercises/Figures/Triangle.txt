@@ -10,4 +10,3 @@ Readings:
     - https://sv.wikipedia.org/wiki/Triangelolikheten
 [2] Heron's formula
     - https://sv.wikipedia.org/wiki/Herons_formel
-    
