@@ -1,0 +1,13 @@
+Add the class Triangle to the Figure hierarchy. A triangle can be defined by the
+lengths of their sides. Notice that not every triad of lengths form a triangle. E.g
+(3, 10, 4).
+Which condition must meet 3 lengths in order to form a triangle?
+Make sure to enforce this constraint in the constructor of the class.
+
+Readings:
+
+[1] Triangle inequality
+    - https://sv.wikipedia.org/wiki/Triangelolikheten
+[2] Heron's formula
+    - https://sv.wikipedia.org/wiki/Herons_formel
+    

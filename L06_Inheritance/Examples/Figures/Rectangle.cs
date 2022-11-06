@@ -1,0 +1,18 @@
+namespace L06_Inheritance.Examples.Figures;
+
+public class Rectangle : Figure
+{
+    public double Width { get; set; }
+    public double Heigth { get; set; }
+
+    public double Area => Width * Heigth;
+
+    public double Perimeter => 2 * (Width + Heigth);
+    
+    public Rectangle(double width, double heigth)
+    {
+        Width = width;
+        Heigth = heigth;
+    }
+    
+}
