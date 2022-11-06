@@ -188,7 +188,8 @@ public class Exercises
     }
 
     /// <summary>
-    /// Sorts the specified array
+    /// Sorts the specified array.
+    /// Make use of MergeSortedArrays
     /// </summary>
     public static void SortArray(int[] arr)
     {
