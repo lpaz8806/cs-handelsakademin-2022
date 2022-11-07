@@ -3,7 +3,7 @@ namespace L06_Inheritance.Examples.BankAccounts;
 public class BankAccount
 {
     public string Owner { get; }
-    public decimal Balance { get; private set; }
+    public decimal Balance { get; protected set; }
 
     public BankAccount(string owner, decimal initialBalance)
     {
@@ -40,5 +40,10 @@ public class BankAccount
             throw new InvalidOperationException("Not enough funds");
 
         Balance -= amount;
+    }
+
+    public override string ToString()
+    {
+        return $"The bank account of {Owner}";
     }
 }

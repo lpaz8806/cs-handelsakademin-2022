@@ -2,13 +2,12 @@ namespace L06_Inheritance.Examples.Circuits;
 
 public abstract class CompoundCircuit : Circuit
 {
-    protected Circuit[] Circuits { get; }
+    public Circuit C1 { get; }
+    public Circuit C2 { get; }
 
-    protected CompoundCircuit(Circuit[] circuits)
+    protected CompoundCircuit(Circuit c1,Circuit c2 )
     {
-        if (circuits.Length < 2)
-            throw new ArgumentException("Compound circuits must have at least two circuits");
-        
-        Circuits = circuits;
+        C1 = c1;
+        C2 = c2;
     }
 }

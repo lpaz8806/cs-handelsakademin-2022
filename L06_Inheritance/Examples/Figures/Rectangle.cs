@@ -2,10 +2,10 @@ namespace L06_Inheritance.Examples.Figures;
 
 public class Rectangle : Figure
 {
-    public double Width { get; set; }
-    public double Heigth { get; set; }
+    public virtual double Width { get; set; }
+    public virtual double Heigth { get; set; }
 
-    public double Area => Width * Heigth;
+    public override double Area => Width * Heigth;
 
     public double Perimeter => 2 * (Width + Heigth);
     

@@ -1,4 +1,4 @@
-namespace L06_Inheritance.Examples.Figures;
+namespace L06_Inheritance.Examples.Circuits;
 
 static class Examples
 {

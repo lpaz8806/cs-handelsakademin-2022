@@ -17,7 +17,13 @@ public class CreditAccount : BankAccount
         
         InterestRate = interestRate;
     }
-    
-    
-    
+
+
+    public void Withdraw(decimal amount)
+    {
+        if(amount <= Balance)
+            base.Withdraw(amount);
+
+        Balance -= amount * (1 + InterestRate);
+    }
 }

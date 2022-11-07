@@ -1,6 +1,6 @@
 namespace L06_Inheritance.Examples.Circuits.Simple;
 
-public class Capacitor : Circuit
+public sealed class Capacitor : Circuit
 {
     private double _capacitance;
 
