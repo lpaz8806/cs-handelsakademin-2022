@@ -18,7 +18,10 @@ public class Exercises
     /// </example>
     public static uint Add(uint x, uint y)
     {
-        return default;
+        if (y == 0)
+            return x;
+
+        return Add(x + 1, y - 1);
     }
     
     /// <summary>
@@ -35,7 +38,10 @@ public class Exercises
     /// </example>
     public static uint Sub(uint x, uint y)
     {
-        return default;
+        if (y == 0)
+            return x;
+
+        return Add(x - 1, y - 1);
     }
     
     /// <summary>
@@ -47,7 +53,10 @@ public class Exercises
     /// </remarks>
     public static uint Mul(uint x, uint y)
     {
-        return default;
+        if (y == 0)
+            return x;
+
+        return x + Mul(x, y - 1);
     }
     
     /// <summary>
@@ -59,7 +68,10 @@ public class Exercises
     /// </remarks>
     public static uint Div(uint x, uint y)
     {
-        return default;
+        if (x < y)
+            return 0;
+
+        return 1 + Div(x - y, y);
     }
     
     /// <summary>
@@ -71,7 +83,10 @@ public class Exercises
     /// </remarks>
     public static uint Mod(uint x, uint y)
     {
-        return default;
+        if (x < y)
+            return x;
+
+        return Mod(x - y, y);
     }
 
     /// <summary>Computes the opposite of x</summary>
@@ -86,7 +101,13 @@ public class Exercises
     /// </example>
     public static int Neg(int x)
     {
-        return 0;
+        if (x == 0)
+            return 0;
+
+        if (x > 0)
+            return Neg(x - 1) - 1;
+        
+        return Neg(x + 1) + 1;
     }
     
     /// <summary>
@@ -98,7 +119,10 @@ public class Exercises
     /// </summary>
     public static uint Pow(uint x, uint y)
     {
-        return 0;
+        if (y == 0)
+            return 1;
+
+        return x * Pow(x, y - 1);
     }
     
     /// <summary>
@@ -116,7 +140,13 @@ public class Exercises
     /// </example>
     public static int DigitsSum(int n)
     {
-        return 0;
+        var lastDigit = n % 10;
+        var nExceptLastDigit = n / 10;
+        
+        if (n == 0)
+            return 0;
+        
+        return lastDigit + DigitsSum(nExceptLastDigit);
     }
     
     /// <summary>
@@ -132,7 +162,16 @@ public class Exercises
     /// </example>
     public static int CountDigit(int n, int d)
     {
-        return 0;
+        var lastDigit = n % 10;
+        var nExceptLastDigit = n / 10;
+
+        var count = lastDigit == d ? 1 : 0;
+
+        var areThereMoreDigitsToExplore = nExceptLastDigit > 0;
+        if (areThereMoreDigitsToExplore)
+            count += CountDigit(nExceptLastDigit, d);
+
+        return count;
     }
     /// <summary>
     /// Counts the number of 1s (ones) in the binary number n
@@ -150,9 +189,27 @@ public class Exercises
     /// FSeq(3) = {1,1,2,3}
     /// FSeq(6) = {1,1,2,3,5,8,13}
     /// </example>
-    public static ulong[] FibonacciSequence(uint n)
+    public static ulong[] FibonacciSequence(int n)
     {
-        return default;
+        var seq = new ulong[n + 1];
+        // Initialize the two known cases so you don't need to
+        // have base cases
+        seq[1] = seq[2] = 1;
+
+        FillFibonacciSequence(n, seq);
+        return seq;
+    }
+
+    static ulong FillFibonacciSequence(int n, ulong[] seq)
+    {
+        // if the nth-term is not yet computed, recursively compute it.
+        // no need to test base cases n=1 and n=2 because the sequence
+        // was conveniently initialized before calling this method
+        if (seq[n] == 0)
+            // store the recursively computed term
+            seq[n] = FillFibonacciSequence(n - 2, seq) + FillFibonacciSequence(n - 1, seq);
+
+        return seq[n]; // return the precomputed result
     }
 
     #endregion
@@ -168,7 +225,20 @@ public class Exercises
     /// </summary>
     public static uint FastPow(uint x, uint y)
     {
-        return 0;
+        if (y == 0)
+            return 1;
+
+        // Recursively compute the pow up to half the exponent
+        var halfPow = FastPow(x, y / 2);
+        // combine to get the whole power
+        var pow = halfPow * halfPow;
+        
+        // Notice that this is pow is only valid when the exponent is even
+        
+        if (y % 2 == 1) // if the exponent is odd
+            pow *= x;   // we need to include the one more x
+        
+        return pow;
     }
 
     /// <summary>
@@ -215,8 +285,33 @@ public class Exercises
     /// <returns>true if n is a Wirth number, false otherwise</returns>
     public static bool IsWirth(int n)
     {
-        return default;
+        return IsWirth(n, 1);
     }
+    
+    static bool IsWirth(int n, int currentWirthNumber)
+    {
+        if (n == currentWirthNumber)
+            return true;
+
+        if (currentWirthNumber > n)
+            return false;
+        
+        return
+            IsWirth(n, 2 * currentWirthNumber + 1) ||
+            IsWirth(n, 3 * currentWirthNumber + 1);
+    }
+    
+    /// <summary>
+    /// Alternative implementation without helper method
+    /// </summary>
+    public static bool IsWirthBottomTop(int n)
+    {
+        return
+            n == 1 ||
+            n % 2 == 1 && IsWirthBottomTop(n / 2) ||
+            n % 3 == 1 && IsWirthBottomTop(n / 3);
+    }
+    
     
     /// <summary>
     /// Computes the area of the largest island in the map
@@ -238,7 +333,37 @@ public class Exercises
     /// <returns>The area of the largest island in the map</returns>
     public static int ComputeAreaOfLargestIsland(bool[,] map)
     {
-        return default;
+        map = (bool[,])map.Clone();
+        
+        var maxArea = 0;
+        for (var i = 0; i < map.GetLength(0); i++)
+        for (var j = 0; j < map.GetLength(1); j++)
+            if (map[i, j])
+                maxArea = Math.Max(maxArea, ComputeAreaOfIsland(map, i, j));
+
+        return maxArea;
+    }
+
+    private static int ComputeAreaOfIsland(bool[,] map, int i, int j)
+    {
+        if(i < 0 || i >= map.GetLength(0))
+            return 0;
+        
+        if(j < 0 || j >= map.GetLength(1))
+            return 0;
+
+        if (map[i, j] == false) // in case of water
+            return 0;
+
+        map[i, j] = false;  // make the land to be water
+        var area = 1;
+        
+        // for each possible direction (-1, 0, 1) of row and column
+        for (var directionInI = -1; directionInI <= 1; directionInI++)
+        for (var directionInJ = -1; directionInJ <= 1; directionInJ++)
+            area += ComputeAreaOfIsland(map, i + directionInI, j + directionInJ);
+
+        return area;
     }
     
     #endregion

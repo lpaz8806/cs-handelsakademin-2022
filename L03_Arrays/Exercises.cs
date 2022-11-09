@@ -289,6 +289,7 @@ static class Exercises
     /// </example>
     public static int EvaluatePolynomial(int[] coefficients, int x)
     {
+        
         return default;
     }
     /// <summary>
@@ -300,7 +301,14 @@ static class Exercises
     /// </example>
     public static int[] AddPolynomials(int[] p, int[] q)
     {
-        return default;
+        var polyMaxDegree = p.Length > q.Length ? p : q;
+        var polyMinDegree = p.Length > q.Length ? q : p;
+        
+        var sum = (int[])polyMaxDegree.Clone();
+        for (var i = 0; i < polyMinDegree.Length; i++)
+            sum[i] += polyMinDegree[i];
+
+        return sum;
     }
     
     /// <summary>
@@ -333,7 +341,72 @@ static class Exercises
     /// <returns>true if valid, false otherwise</returns>
     public static bool IsValidSudokuSolution(byte[,] sudoku)
     {
-        return default;
+        for (int i = 0; i < 9; i++)
+        {
+            
+            if (!IsValid(ExtractColumn(sudoku, i)))
+                return false;
+            
+            if (!IsValid(ExtractRow(sudoku, i)))
+                return false;
+            
+            if (!IsValid(ExtractCell(sudoku, i)))
+                return false;
+        }
+
+        return true;
     }
+
+    static bool IsValid(byte[] numbers)
+    {
+        var usedNumbers = new bool[10];
+        for (var i = 0; i < numbers.Length; i++)
+        {
+            var number = numbers[i];
+            
+            if(number == 0)
+                continue;
+            
+            if (usedNumbers[number])
+                return false;
+
+            usedNumbers[number] = true;
+        }
+
+        return true;
+    }
+
+    static byte[] ExtractColumn(byte[,] sudoku, int col)
+    {
+        var group = new byte[9];
+        for (var row = 0; row < 9; row++)
+            group[row] = sudoku[row, col];
+        return group;
+    }
+    static byte[] ExtractRow(byte[,] sudoku, int row)
+    {
+        var group = new byte[9];
+        for (var col = 0; col < 9; col++)
+            group[col] = sudoku[row, col];
+        return group;
+    }
+    static byte[] ExtractCell(byte[,] sudoku, int cell)
+    {
+        var group = new byte[9];
+        
+        var col = 3 * (cell / 3);
+        var row = 3 * (cell % 3);
+
+        for (var i = 0; i < 9; i++)
+        {
+            var dCol = i / 3;
+            var dRow = i % 3;
+
+            group[i] = sudoku[row + dRow, col + dCol];
+        }
+
+        return group;
+    }
+    
     #endregion
 }
