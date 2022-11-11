@@ -1,5 +1,7 @@
 // Välkommen tillbaka till förskolan
 
+
+
 #region Wishful thinking
 
 // Hanoi towers
@@ -22,6 +24,10 @@ If the user has no attempt left the message will be:
 "You've run out of attempts :(" and the game ends
 */
 using L04_Recursion;
+
+var seq = Exercises.FibonacciSequence(100000);
+Console.WriteLine(seq[^1]);
+return;
 
 void PlayGuessGame(int maxNumber, int maxAttempts = int.MaxValue)
 {

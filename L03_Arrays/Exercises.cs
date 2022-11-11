@@ -39,12 +39,13 @@ static class Exercises
     /// </summary>
     public static int SecondLargest(int[] numbers)
     {
-        var max1 = Math.Min(numbers[0], numbers[1]);
-        var max2 = Math.Max(numbers[0], numbers[1]);
-
+        var max1 = Math.Max(numbers[0], numbers[1]);
+        var max2 = Math.Min(numbers[0], numbers[1]);
+        // 
         for (int i = 2; i < numbers.Length; i++)
         {
             var newNumber = numbers[i];
+            // preserve the invariant
             if (newNumber > max1)
             {
                 max2 = max1;
@@ -61,7 +62,15 @@ static class Exercises
 
     public static int Minimum(int[] numbers)
     {
-        return default;
+        var min = numbers[0];
+        
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            if (numbers[i] < min)
+                min = numbers[i];
+        }
+
+        return min;
     }
     
     public static int SecondSmallest(int[] numbers)
@@ -149,9 +158,12 @@ static class Exercises
     /// </example>
     public static void Swap<T>(T[] items, int i, int j)
     {
-        var temp = items[i];
-        items[i] = items[j];
-        items[j] = temp;
+        // Tuple deconstruction
+        (items[i], items[j]) = (items[j], items[i]);
+        
+        // var temp = items[i];
+        // items[i] = items[j];
+        // items[j] = temp;
     }
     
     /// <summary>
@@ -163,6 +175,8 @@ static class Exercises
     /// </example>
     public static T[] Clone<T>(T[] items)
     {
+        // var cloned = items.Clone() as T[];
+        
         var clonedArray = new T[items.Length];
         
         for (int i = 0; i < items.Length; i++)
@@ -183,7 +197,8 @@ static class Exercises
         var reversedArray = new T[items.Length];
 
         for (int i = 0; i < items.Length; i++)
-            reversedArray[i] = items[items.Length - i - 1];
+            reversedArray[i] = items[^(i + 1)];
+            // reversedArray[i] = items[items.Length - i - 1];
         
         return reversedArray;
     }
@@ -228,7 +243,13 @@ static class Exercises
     /// <returns>The resulting matrix</returns>
     public static double[,] MatrixAdd(double[,] m1, double[,] m2)
     {
-        return default;
+        var sum = new double[m1.GetLength(0), m1.GetLength(1)];
+        for (int i = 0; i < m1.GetLength(0); i++)
+        for (int j = 0; j < m1.GetLength(1); j++)
+        {
+            sum[i, j] = m1[i, j] + m2[i, j];
+        }
+        return sum;
     }
     
     /// <summary>
@@ -289,8 +310,14 @@ static class Exercises
     /// </example>
     public static int EvaluatePolynomial(int[] coefficients, int x)
     {
+        var result = 0;
+        for (int i = 0; i < coefficients.Length; i++)
+        {
+            var coeff = coefficients[i];
+            result += coeff * (int)Math.Pow(x, i);
+        }
         
-        return default;
+        return result;
     }
     /// <summary>
     /// Computes the sum of the specified polynomials
@@ -316,7 +343,13 @@ static class Exercises
     /// </summary>
     public static int[] MultiplyPolynomials(int[] p, int[] q)
     {
-        return default;
+        var prod = new int[p.Length + q.Length - 1];
+        
+        for (var i = 0; i < p.Length; i++)
+        for (var j = 0; j < q.Length; j++)
+            prod[i + j] += p[i] * q[j];
+
+        return prod;
     }
     /// <summary>
     /// Determines whether the specified sudoku solution is valid or not.
@@ -343,7 +376,6 @@ static class Exercises
     {
         for (int i = 0; i < 9; i++)
         {
-            
             if (!IsValid(ExtractColumn(sudoku, i)))
                 return false;
             
@@ -394,6 +426,7 @@ static class Exercises
     {
         var group = new byte[9];
         
+        // top-left corner of the cell
         var col = 3 * (cell / 3);
         var row = 3 * (cell % 3);
 

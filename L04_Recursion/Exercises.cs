@@ -1,3 +1,5 @@
+using System.Data.SqlTypes;
+
 namespace L04_Recursion;
 
 public class Exercises
@@ -20,9 +22,16 @@ public class Exercises
     {
         if (y == 0)
             return x;
-
+        
+        // tail recursion
         return Add(x + 1, y - 1);
     }
+    
+    /*
+    add(3,2) => 5
+    add(4,1) => 5
+    add(5,0)  => 5
+     */
     
     /// <summary>
     /// Computes the subtraction of x and y.
@@ -54,7 +63,7 @@ public class Exercises
     public static uint Mul(uint x, uint y)
     {
         if (y == 0)
-            return x;
+            return 0;
 
         return x + Mul(x, y - 1);
     }
@@ -191,27 +200,28 @@ public class Exercises
     /// </example>
     public static ulong[] FibonacciSequence(int n)
     {
-        var seq = new ulong[n + 1];
+        var seq = new ulong[n];
         // Initialize the two known cases so you don't need to
         // have base cases
-        seq[1] = seq[2] = 1;
-
-        FillFibonacciSequence(n, seq);
+        Array.Fill(seq, 1UL, 0, Math.Min(n, 2));
+        
+        if(n > 2)
+            FillFibonacciSequence(n, seq);
+        
         return seq;
     }
-
-    static ulong FillFibonacciSequence(int n, ulong[] seq)
+    
+    static void FillFibonacciSequence(int n, ulong[] seq)
     {
-        // if the nth-term is not yet computed, recursively compute it.
-        // no need to test base cases n=1 and n=2 because the sequence
-        // was conveniently initialized before calling this method
-        if (seq[n] == 0)
-            // store the recursively computed term
-            seq[n] = FillFibonacciSequence(n - 2, seq) + FillFibonacciSequence(n - 1, seq);
-
-        return seq[n]; // return the precomputed result
+        var posInSeq = n - 1; 
+        
+        if (seq[posInSeq] != 0)
+            return;
+        
+        FillFibonacciSequence(n - 1, seq);
+        seq[posInSeq] = seq[posInSeq - 1] + seq[posInSeq - 2];
     }
-
+    
     #endregion
 
     #region Divide and Conquer
@@ -346,9 +356,11 @@ public class Exercises
 
     private static int ComputeAreaOfIsland(bool[,] map, int i, int j)
     {
+        // checking in bound
         if(i < 0 || i >= map.GetLength(0))
             return 0;
         
+        // checking in bound
         if(j < 0 || j >= map.GetLength(1))
             return 0;
 

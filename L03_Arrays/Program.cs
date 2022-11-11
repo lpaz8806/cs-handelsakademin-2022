@@ -4,6 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
+        var col = 3;
+        var row = 0;
+        for (int i = 0; i < 9; i++)
+        {
+            Console.WriteLine($"i = {row + i / 3}, j = {col + i % 3}");
+        }
+
+        return;
         int[,] numbers = new int[3, 2];
         char[,] letters =
         {
