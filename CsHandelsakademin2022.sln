@@ -21,7 +21,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repetition", "Repetition", "{6756DB07-DF9A-4887-A0C3-2E71ACEFB08C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L06_Inheritance", "L06_Inheritance\L06_Inheritance.csproj", "{E075E3E0-DA9B-4455-AE43-2A5184AA8EBF}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handledning1104", "Handledning1104\Handledning1104.csproj", "{32B903FA-EF61-4631-BC32-B41EBEA37ACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L07_Interfaces", "L07_Interfaces\L07_Interfaces.csproj", "{C7E8634D-E0CA-4FB2-8024-575F6F01933E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +72,10 @@ Global
 		{32B903FA-EF61-4631-BC32-B41EBEA37ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32B903FA-EF61-4631-BC32-B41EBEA37ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32B903FA-EF61-4631-BC32-B41EBEA37ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E8634D-E0CA-4FB2-8024-575F6F01933E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E8634D-E0CA-4FB2-8024-575F6F01933E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E8634D-E0CA-4FB2-8024-575F6F01933E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E8634D-E0CA-4FB2-8024-575F6F01933E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D921555A-D9EB-4C77-9A4F-6F01C21AD494} = {559F01C0-9B1F-409A-8A3F-E1D1509D2213}
