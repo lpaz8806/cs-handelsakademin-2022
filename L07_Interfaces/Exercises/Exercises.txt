@@ -3,3 +3,10 @@ members:
     1.1 A property Health of type int, get only
     1.2 A method Heal which takes no arguments and returns nothing
     
+2. Define an interface called IHealable with the following
+members:
+    2.1 A method Heal which takes no arguments and returns nothing
+    
+3. Create a class Hydralisk which implements IHealable AND
+   IFooDaBaDee. IFooDaBaDee should be implemented
+   explicitly.
