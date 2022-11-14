@@ -1,1 +1,5 @@
-1. 
+1. Define an interface called IFooDaBaDee with the following
+members:
+    1.1 A property Health of type int, get only
+    1.2 A method Heal which takes no arguments and returns nothing
+    
