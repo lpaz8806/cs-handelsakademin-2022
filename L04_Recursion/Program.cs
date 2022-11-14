@@ -1,7 +1,5 @@
 // Välkommen tillbaka till förskolan
 
-
-
 #region Wishful thinking
 
 // Hanoi towers
@@ -23,11 +21,6 @@ case. The attempts get reduced by one.
 If the user has no attempt left the message will be: 
 "You've run out of attempts :(" and the game ends
 */
-using L04_Recursion;
-
-var seq = Exercises.FibonacciSequence(100000);
-Console.WriteLine(seq[^1]);
-return;
 
 void PlayGuessGame(int maxNumber, int maxAttempts = int.MaxValue)
 {
@@ -68,6 +61,11 @@ void PlayGuessGame(int maxNumber, int maxAttempts = int.MaxValue)
 // we should give to the player such that,
 // for a given maximum number n,
 // if he plays wisely, can always win?
+
+// k is the smallest integer greater than 
+// the logarithm base 2 of n
+// In C#
+// var k = Math.Ceiling(Math.Log2(n))
 #endregion
 
 #endregion
@@ -120,9 +118,22 @@ THE END
 #endregion
 
 #region The moral of the story
-/*
-    
-*/
+// A problem P1 can be solved by transforming
+// P1 into a smaller or different problem P2 and
+// P2 into a smaller or different P3
+// and so on until Pn
+// Only if Pn is solvable
+
+// If Pn is not solvable then P1 is not solvable
+// by using these transformations
+
+// In this case, Liza and Harry couldn't find a smaller, different
+// problem into which transform the problem of wetting the stone
+
+// Like the first alternative suggested, if they would've solved
+// the "wetting the stone problem" by peeing the stone,
+// the original "removing the hole in the bucket" problem
+// would've been solved
 #endregion
 
 #endregion
@@ -150,18 +161,3 @@ set of N coins?
 */
 
 #endregion
-
-bool[,] map =
-{
-    { true, false, false, true },
-    { true, false, false, false },
-    { false, true, false, false },
-    { false, false, false, false },
-    { true, false, false, false },
-    { false, false, false, false },
-    { false, false, true, true },
-    { false, false, false, false },
-    { true, true, true, true }
-};
-var count = Examples.CountIslands(map);
-Console.WriteLine(count);

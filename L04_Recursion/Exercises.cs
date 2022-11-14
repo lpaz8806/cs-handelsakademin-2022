@@ -1,5 +1,3 @@
-using System.Data.SqlTypes;
-
 namespace L04_Recursion;
 
 public class Exercises
@@ -264,7 +262,25 @@ public class Exercises
     /// </example>
     public static int[] MergeSortedArrays(int[] arr1, int[] arr2)
     {
-        return default;
+        var result = new int[arr1.Length + arr2.Length];
+
+        var i = 0; // use with arr1
+        var j = 0; // use with arr2
+        var k = 0; // use with result
+        
+        while (i < arr1.Length && j < arr2.Length)
+            result[k++] = arr1[i] < arr2[j] 
+                ? arr1[i++] 
+                : arr2[j++];
+        
+        
+        while (i < arr1.Length)
+            result[k++] = arr1[i++];
+
+        while (j < arr2.Length)
+            result[k++] = arr2[j++];
+
+        return result;
     }
 
     /// <summary>
@@ -273,7 +289,28 @@ public class Exercises
     /// </summary>
     public static void SortArray(int[] arr)
     {
+        // an array of zero or one elements is already sorted
+        if(arr.Length < 2)
+            return;
         
+        var midIndex = arr.Length / 2;
+        
+        // notice that midIndex here is the length of the subarray, not the end index
+        var leftSubArray = arr[..midIndex];
+        
+        // the right subarray goes from midIndex to the end
+        var rightSubArray = arr[midIndex..];
+        
+        // Recursively sort the left subarray
+        SortArray(leftSubArray);
+        // Recursively sort the right subarray
+        SortArray(rightSubArray);
+        
+        // Merge sorted subarrays
+        var mergedSubarrays = MergeSortedArrays(leftSubArray, rightSubArray);
+        
+        // copy the result to the original array
+        Array.Copy(mergedSubarrays, arr, arr.Length);
     }
     
     #endregion
