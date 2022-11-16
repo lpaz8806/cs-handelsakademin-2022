@@ -10,6 +10,8 @@ public static class LoginApp
 
         while (true)
         {
+            Console.Clear();
+            
             Console.Write("username: ");
             var username = Console.ReadLine();
             Console.Write("password: ");
@@ -21,7 +23,10 @@ public static class LoginApp
 
     static LoginSystem InitLoginSystem()
     {
-        var auth = new LoginSystem();
+        var auth = new LoginSystem(
+            new("pepe", "1234"),
+            new("ola", "ola")
+        );
         return auth;
     }
 }
