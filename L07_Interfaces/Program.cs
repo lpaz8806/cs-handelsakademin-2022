@@ -11,8 +11,10 @@
 using L07_Interfaces;
 using L07_Interfaces.Examples;
 using L07_Interfaces.Examples.Implementations;
+using L07_Interfaces.Examples.Menu;
 
-Console.WriteLine();
+var app = new App();
+app.Run();
 
 #if false
 string[] ord = { "a", "aa", "ab", "abc", "abcd" };

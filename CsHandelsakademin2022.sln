@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L07_Interfaces", "L07_Inter
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{B62F04AA-AA62-44DE-8BD2-4BF43D84AD9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L08_FunctionalProgramming", "L08_FunctionalProgramming\L08_FunctionalProgramming.csproj", "{355F1F0F-F522-4F29-AC00-75A1DBDAE7B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{C7E8634D-E0CA-4FB2-8024-575F6F01933E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7E8634D-E0CA-4FB2-8024-575F6F01933E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7E8634D-E0CA-4FB2-8024-575F6F01933E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{355F1F0F-F522-4F29-AC00-75A1DBDAE7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{355F1F0F-F522-4F29-AC00-75A1DBDAE7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{355F1F0F-F522-4F29-AC00-75A1DBDAE7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{355F1F0F-F522-4F29-AC00-75A1DBDAE7B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D921555A-D9EB-4C77-9A4F-6F01C21AD494} = {559F01C0-9B1F-409A-8A3F-E1D1509D2213}

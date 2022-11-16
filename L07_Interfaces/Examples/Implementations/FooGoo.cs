@@ -6,6 +6,7 @@ public class FooGoo : IFoo, IGoo
 
     public int Count => _count;
     
+    // Explicit implementation of IFoo.DoSomething
     void IFoo.DoSomething()
     {
         Console.WriteLine("Foo doing something");
@@ -17,7 +18,7 @@ public class FooGoo : IFoo, IGoo
     }
     
     
-    
+    // Implicit implementation of GoogleIt
     public void GoogleIt()
     {
         Console.WriteLine("Im googling it");
