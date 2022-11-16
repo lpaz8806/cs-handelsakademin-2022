@@ -9,8 +9,7 @@ public class LoginSystem
         _users.AddRange(users);
     }
 
-    public User? Login(string name, string password)
+    public void Login(string name, string password)
     {
-        return null;
     }
 }

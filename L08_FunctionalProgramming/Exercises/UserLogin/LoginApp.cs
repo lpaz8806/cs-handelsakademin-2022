@@ -8,12 +8,15 @@ public static class LoginApp
         List<User> usersLoggedIn = new List<User>();
         List<User> bannedUsers = new List<User>();
 
-        Console.Write("username: ");
-        var username = Console.ReadLine();
-        Console.Write("password: ");
-        var password = Console.ReadLine();
+        while (true)
+        {
+            Console.Write("username: ");
+            var username = Console.ReadLine();
+            Console.Write("password: ");
+            var password = Console.ReadLine();
 
-        auth.Login(username, password);
+            auth.Login(username, password);
+        }
     }
 
     static LoginSystem InitLoginSystem()
