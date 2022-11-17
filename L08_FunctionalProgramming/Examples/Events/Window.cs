@@ -18,6 +18,15 @@ public class Window
                 button.Click();
         }
     }
+
+    public void Display()
+    {
+        Console.Clear();
+        foreach (var button in _buttons)
+        {
+            button.Display();
+        }
+    }
     
     public void AddButton(Button b)
     {
@@ -46,5 +55,25 @@ public class Button
     public void Click()
     {
         Clicked?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void Display()
+    {
+        var hLine = new string('*', Width);
+        var vLine = '*' + new string(' ', Width -2) + '*';
+
+        Console.SetCursorPosition( Left, Top);
+        Console.Write(hLine);
+        for (int i = 0; i < Height -2; i++)
+        {
+            Console.SetCursorPosition( Left, Top + i + 1);
+            Console.Write(vLine);
+        }
+
+        Console.SetCursorPosition(Left, Top + Height - 1);
+        Console.Write(hLine);
+
+        Console.SetCursorPosition(Left + 2, (Top + Height) / 2);
+        Console.Write(Text);
     }
 }

@@ -1,9 +1,11 @@
 namespace L08_FunctionalProgramming.Examples.Events;
-// triggered or fired
+// triggered, fired or raised
 
 public class PhoneBook
 {
     public string Owner { get; }
+    
+    // Declare an event
     public event EventHandler<EntryAddedEventArgs> EntryAdded;
     
     public PhoneBook(string name)
@@ -14,6 +16,8 @@ public class PhoneBook
     public void Add(string name, string phone)
     {
         // adding the entry
+        
+        // fire the event. notify every subscriber
         OnEntryAdded(new EntryAddedEventArgs(name, phone));
     }
     public void Remove(string name)
@@ -21,6 +25,7 @@ public class PhoneBook
         
     }
 
+    // Allow children classes to rise the event
     protected virtual void OnEntryAdded(EntryAddedEventArgs e)
     {
         if (EntryAdded != null)
@@ -39,9 +44,11 @@ public class SuperPhoneBook : PhoneBook
     {
     }
 
+    // Redefine the way the event is triggered
     protected override void OnEntryAdded(EntryAddedEventArgs e)
     {
         Console.WriteLine("Whatever");
-        // base.OnEntryAdded(e);
+        // Call the parent "trigger"
+        base.OnEntryAdded(e);   
     }
 }

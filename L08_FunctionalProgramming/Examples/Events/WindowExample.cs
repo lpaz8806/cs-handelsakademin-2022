@@ -5,6 +5,7 @@ public static class WindowExample
     public static void Run()
     {
         var w = InitWindow();
+        w.Display();
 
         while (true)
         {
@@ -22,27 +23,19 @@ public static class WindowExample
         var okBtn = new Button("Ok", 0, 0, 10, 10);
         var cancelBtn = new Button("Cancel", 0, 15, 10, 10);
 
-        var btn3 = new Button("Ok", 20, 0, 10, 10);
+        var btn3 = new Button("Exit", 20, 0, 10, 10);
         var w = new Window();
         w.AddButton(okBtn);
         w.AddButton(cancelBtn);
         w.AddButton(btn3);
 
-        okBtn.Clicked += (sender, args) =>
-        {
-            Console.WriteLine("User accepted");
-        };
-        
-        cancelBtn.Clicked += (sender, args) =>
-        {
-            Console.WriteLine("User rejected");
-        };
+        okBtn.Clicked += (sender, args) => { Console.WriteLine("User accepted"); };
 
-        btn3.Clicked += (sender, args) =>
-        {
-            Environment.Exit(0);
-        };
-        
+        cancelBtn.Clicked += (sender, args) => { Console.WriteLine("User rejected"); };
+
+        btn3.Clicked += (sender, args) => { Environment.Exit(0); };
+
         return w;
     }
+
 }

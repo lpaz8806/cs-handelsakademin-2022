@@ -7,7 +7,7 @@ public static class LoginApp
         var auth = InitLoginSystem();
         List<User> usersLoggedIn = new List<User>();
         List<User> bannedUsers = new List<User>();
-
+        
         while (true)
         {
             Console.Clear();

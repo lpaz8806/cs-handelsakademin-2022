@@ -2,8 +2,9 @@
 Delegates och events
 - Delegates X (key part)
 - Anonymous delegates X (sugar)
-- Func<T> och Action<T> X (no need to repeat yourself)
+- Func<T>, Action<T> and Predicate<T> X (no need to repeat yourself)
 - Events X
+
 Funktionell programmering
 - Lambda uttryck X
 - Funktionell vs imperativ
@@ -17,7 +18,8 @@ class Program
 {
     static void Main()
     {
-        LoginApp.Run();
+        WindowExample.Run();
+        // LoginApp.Run();
     }
 }
 
