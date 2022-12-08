@@ -9,7 +9,7 @@ public class BrandRepository : IBrandRepository, IDisposable
 
     public BrandRepository(MySqlConnection conn)
     {
-        this.conn = conn;
+        this.conn = conn; // this is weird
     }
 
     public void Dispose()
