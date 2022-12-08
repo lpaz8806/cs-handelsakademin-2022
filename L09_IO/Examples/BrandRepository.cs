@@ -10,6 +10,7 @@ public class BrandRepository : IBrandRepository, IDisposable
     public BrandRepository(MySqlConnection conn)
     {
         this.conn = conn;
+        // this is super weird
     }
 
     public void Dispose()
