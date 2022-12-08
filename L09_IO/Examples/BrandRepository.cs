@@ -96,4 +96,9 @@ public class BrandRepository : IBrandRepository, IDisposable
         command.ExecuteNonQuery();
         conn.Close();
     }
+
+    private void onBtnClick()
+    {
+        // BLA BLA BLA
+    }
 }
